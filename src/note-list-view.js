@@ -5,8 +5,9 @@
       constructor(list) {
         this.noteList = list;
       }
+
       toHTML() {
-        var notes = (this.noteList.getAllNotes()).map(note => note.text)
+        var notes = (this.noteList.getAllNotes()).map(note => note.text.slice(0,20))
         var notes = notes.join('</div></li><li><div>')
         return "<ul><li><div>" + notes + "</div></li></ul>"
       }

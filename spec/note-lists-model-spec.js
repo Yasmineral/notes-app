@@ -7,8 +7,8 @@
     var note2 = new Note("Note 2"); 
     var list = new List();
     
-    list.addNote(note1)
-    list.addNote(note2)
+    list.addNote("Note 1")
+    list.addNote("Note 2")
 
     console.log("Total length of Notes array")
     assert.isTrue(list.allNotes.length === 2);

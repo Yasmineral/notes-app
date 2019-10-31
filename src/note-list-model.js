@@ -4,7 +4,7 @@
   };
 
   List.prototype.addNote = function(note) {
-    this.allNotes.push(note)
+    this.allNotes.push(new Note(note))
   };
 
   List.prototype.getAllNotes = function() {
