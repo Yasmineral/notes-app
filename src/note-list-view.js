@@ -4,14 +4,19 @@
   class View {
       constructor(list) {
         this.noteList = list;
+
       }
 
       toHTML() {
-        var notes = (this.noteList.getAllNotes()).map(note => note.text.slice(0,20))
-        var notes = notes.join('</div></li><li><div>')
-        return "<ul><li><div>" + notes + "</div></li></ul>"
+        var listJoin = []
+        this.noteList.getAllNotes().forEach(function(note) {
+          var noteText20Chars = note.text.substr(0, 20);
+          listJoin.push('<li><div><a href="#' + note.id +'">' + noteText20Chars + '</a></div></li>')
+        })
+        return '<ul>' + listJoin.join('') + '</ul>'
       }
     }
   ;
     exports.View = View;
 })(this);
+
